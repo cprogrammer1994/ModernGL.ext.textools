@@ -3,7 +3,8 @@ ModernGL.ext.textools
 
 ModernGL extension for loading and debugging textures.
 
-ModernGL.ext.obj on `Github <https://github.com/cprogrammer1994/ModernGL.ext.textools>`_
+- `ModernGL.ext.textools on Github <https://github.com/cprogrammer1994/ModernGL.ext.textools>`_
+- `ModernGL.ext.textools on PyPI <https://pypi.python.org/pypi/ModernGL.ext.textools>`_
 
 Install
 -------

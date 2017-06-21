@@ -3,6 +3,7 @@
 ModernGL extension for handling textures easily
 
 - [Documentation](http://modernglexttextools.readthedocs.io)
+- [ModernGL.ext.textools on PyPI](https://pypi.python.org/pypi/ModernGL.ext.textools)
 
 ## Usage
 
