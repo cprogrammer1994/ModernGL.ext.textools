@@ -30,6 +30,9 @@ Example
 	Some of the operation does not require a Context.
 	For example a context is required to downsample textures before read.
 
+Documentation
+-------------
+
 .. currentmodule:: ModernGL.ext.textools
 
 .. autofunction:: set_default_context(ctx)
