@@ -59,7 +59,7 @@ def set_default_context(ctx) -> None:
         Set the default context.
 
         Args:
-            ctx (ModernGL.Context): The Context to use when needed.
+            ctx (:py:class:`ModernGL.Context`): The Context to use when needed.
 
         Examples:
 
@@ -89,7 +89,10 @@ def load(filename, convert=None, ctx=None) -> ModernGL.Texture:
 
         Keyword Args:
             convert (str): Convert the texture before loading. Possible values are: ('L', 'RGB', 'RGBA')
-            ctx (ModernGL.Context): The Context to use for loading the texture.
+            ctx (:py:class:`ModernGL.Context`): The Context to use for loading the texture.
+
+        Returns:
+            :py:class:`ModernGL.Texture`: The texture.
 
         Examples:
 
@@ -129,11 +132,14 @@ def image(texture, modify=None, ctx=None) -> Image:
         Read a texture to a Pillow Image. If ctx is ``None`` the default_context is used.
 
         Args:
-            texture (ModernGL.Texture): The texture to read.
+            texture (:py:class:`ModernGL.Texture`): The texture to read.
 
         Keyword Args:
             modify (lambda): Modify the color values before storing them in the Image.
-            ctx (ModernGL.Context): The Context to use for loading the texture.
+            ctx (:py:class:`ModernGL.Context`): The Context to use for loading the texture.
+
+        Returns:
+            :py:class:`Image`: The image.
 
         Examples:
 
@@ -204,11 +210,11 @@ def show(texture, modify=None, ctx=None) -> None:
         Show the texture using Pillow. If ctx is ``None`` the default_context is used.
 
         Args:
-            texture (ModernGL.Texture): The texture to show.
+            texture (:py:class:`ModernGL.Texture`): The texture to show.
 
         Keyword Args:
             modify (lambda): Modify the color values before storing them in the Image.
-            ctx (ModernGL.Context): The Context to use for loading the texture.
+            ctx (:py:class:`ModernGL.Context`): The Context to use for loading the texture.
 
         Examples:
 
