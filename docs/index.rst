@@ -3,6 +3,8 @@ ModernGL.ext.textools
 
 ModernGL extension for loading and debugging textures.
 
+ModernGL.ext.obj on `Github <https://github.com/cprogrammer1994/ModernGL.ext.obj>`_
+
 Install
 -------
 
