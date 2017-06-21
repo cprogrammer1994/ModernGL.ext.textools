@@ -8,7 +8,7 @@ import sphinx_rtd_theme
 
 sys.path.insert(0, os.path.abspath('..'))
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.githubpages', 'sphinxcontrib.napoleon']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.githubpages', 'sphinx.ext.intersphinx', 'sphinxcontrib.napoleon']
 
 templates_path = ['templates']
 source_suffix = '.rst'
