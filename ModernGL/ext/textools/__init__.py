@@ -54,12 +54,57 @@ def clampf(x):
     return int(x * 255.0)
 
 
-def set_default_context(ctx):
+def set_default_context(ctx) -> None:
+    '''
+        Set the default context.
+
+        Args:
+            ctx (ModernGL.Context): The Context to use when needed.
+
+        Examples:
+
+            .. code-block:: python
+
+                import ModernGL
+                from ModernGL.ext import textools
+
+                ctx = ModernGL.create_standalone_context()
+                # ctx = ModernGL.create_context()
+
+                textools.set_default_context(ctx)
+
+                texture = textools.load('brick.jpg')
+                textools.show(texture)
+    '''
     global default_context
     default_context = ctx
 
 
 def load(filename, convert=None, ctx=None) -> ModernGL.Texture:
+    '''
+        Load a texture. If ctx is ``None`` the default_context is used.
+
+        Args:
+            filename (str): The name of the file to load.
+
+        Keyword Args:
+            convert (str): Convert the texture before loading. Possible values are: ('L', 'RGB', 'RGBA')
+            ctx (ModernGL.Context): The Context to use for loading the texture.
+
+        Examples:
+
+            .. code-block:: python
+
+                import ModernGL
+                from ModernGL.ext import textools
+
+                ctx = ModernGL.create_standalone_context()
+                # ctx = ModernGL.create_context()
+
+                texture = textools.load('brick.jpg', ctx=ctx)
+                texture.use()
+    '''
+
     if ctx is None:
         ctx = default_context
         if ctx is None:
@@ -80,6 +125,31 @@ def load(filename, convert=None, ctx=None) -> ModernGL.Texture:
 
 
 def image(texture, modify=None, ctx=None) -> Image:
+    '''
+        Read a texture to a Pillow Image. If ctx is ``None`` the default_context is used.
+
+        Args:
+            texture (ModernGL.Texture): The texture to read.
+
+        Keyword Args:
+            modify (lambda): Modify the color values before storing them in the Image.
+            ctx (ModernGL.Context): The Context to use for loading the texture.
+
+        Examples:
+
+            .. code-block:: python
+
+                import ModernGL
+                from ModernGL.ext import textools
+
+                ctx = ModernGL.create_standalone_context()
+                # ctx = ModernGL.create_context()
+
+                texture = textools.load('brick.jpg', ctx=ctx)
+                img = textools.image(texture)
+                img.save('texture.png')
+    '''
+
     if ctx is None:
         ctx = default_context
 
@@ -130,4 +200,28 @@ def image(texture, modify=None, ctx=None) -> Image:
 
 
 def show(texture, modify=None, ctx=None) -> None:
+    '''
+        Show the texture using Pillow. If ctx is ``None`` the default_context is used.
+
+        Args:
+            texture (ModernGL.Texture): The texture to show.
+
+        Keyword Args:
+            modify (lambda): Modify the color values before storing them in the Image.
+            ctx (ModernGL.Context): The Context to use for loading the texture.
+
+        Examples:
+
+            .. code-block:: python
+
+                import ModernGL
+                from ModernGL.ext import textools
+
+                ctx = ModernGL.create_standalone_context()
+                # ctx = ModernGL.create_context()
+
+                texture = textools.load('brick.jpg', ctx=ctx)
+                textools.show(texture)
+    '''
+
     image(texture, modify=modify, ctx=ctx).show()
