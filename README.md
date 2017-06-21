@@ -2,6 +2,8 @@
 
 ModernGL extension for handling textures easily
 
+- [Documentation](http://modernglexttextools.readthedocs.io)
+
 ## Usage
 
 ```python
