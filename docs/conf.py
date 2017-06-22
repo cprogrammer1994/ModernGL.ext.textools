@@ -58,6 +58,10 @@ texinfo_documents = [
     ),
 ]
 
+intersphinx_mapping = {
+    'ModernGL': ('https://moderngl.readthedocs.io/en/stable/', None),
+}
+
 
 def setup(app):
     app.add_stylesheet('css/custom.css')
