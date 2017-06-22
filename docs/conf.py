@@ -60,7 +60,7 @@ texinfo_documents = [
 
 intersphinx_mapping = {
     'ModernGL': ('https://moderngl.readthedocs.io/en/stable/', None),
-    'PIL': ('https://pillow.readthedocs.io/en/stable/', None),
+    'Pillow': ('https://pillow.readthedocs.io/en/stable/', None),
 }
 
 

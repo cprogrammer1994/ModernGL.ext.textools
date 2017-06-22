@@ -6,8 +6,8 @@ import logging
 import struct
 
 import ModernGL
-from PIL import Image
 import numpy as np
+import PIL as Pillow
 
 __all__ = [
     'set_default_context',
@@ -88,7 +88,7 @@ def load(filename, convert=None, ctx=None) -> ModernGL.Texture:
             filename (str): The name of the file to load.
 
         Keyword Args:
-            convert (str): Convert the texture before loading. Possible values are: ('L', 'RGB', 'RGBA')
+            convert (str): Convert the texture before loading. Possible values are: ``L``, ``RGB`` and ``RGBA``
             ctx (:py:class:`ModernGL.Context`): The Context to use for loading the texture.
 
         Returns:
@@ -113,7 +113,7 @@ def load(filename, convert=None, ctx=None) -> ModernGL.Texture:
         if ctx is None:
             raise Exception('no context')
 
-    img = Image.open(filename)
+    img = Pillow.Image.open(filename)
 
     if convert is not None:
         img = img.convert(convert)
@@ -127,7 +127,7 @@ def load(filename, convert=None, ctx=None) -> ModernGL.Texture:
     return ctx.texture(img.size, components, img.tobytes())
 
 
-def image(texture, modify=None, ctx=None) -> Image:
+def image(texture, modify=None, ctx=None) -> Pillow.Image:
     '''
         Read a texture to a Pillow Image. If ctx is ``None`` the default_context is used.
 
@@ -139,7 +139,7 @@ def image(texture, modify=None, ctx=None) -> Image:
             ctx (:py:class:`ModernGL.Context`): The Context to use for loading the texture.
 
         Returns:
-            :py:class:`Image`: The image.
+            :py:class:`Pillow.Image`: The image.
 
         Examples:
 
@@ -179,7 +179,7 @@ def image(texture, modify=None, ctx=None) -> Image:
         if texture.components == 2:
             pixels = b''.join(pixels[i : i + 2] + b'\x00' for i in range(0, len(pixels), 2))
 
-        return Image.frombytes(mode, texture.size, pixels)
+        return Pillow.Image.frombytes(mode, texture.size, pixels)
 
     else:
         if ctx is None:
