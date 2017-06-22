@@ -16,6 +16,8 @@ __all__ = [
     'show',
 ]
 
+__version__ = '0.2.0'
+
 log = logging.getLogger('ModernGL.ext.textools')
 
 lookup_components = {
